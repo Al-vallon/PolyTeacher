@@ -26,9 +26,9 @@ from drf_yasg.utils import swagger_auto_schema
 
 
 class AllTranslationsViewSet(APIView):
-    
+
+    #fonction pour traduction
     def translate(self, source_text, source_language, target_language):
-        # Fonction pour appeler l'API Gemini et obtenir la traduction
         prompt = f"Traduis '{source_text}' en {target_language}."
         genai.configure(api_key=GEMINI_API_KEY)
         model = genai.GenerativeModel("gemini-1.5-flash")
